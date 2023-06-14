@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
 
-function ToDoItem({ itemValue, onDeleteItem }) {
+function ToDoItem({ itemValue, onDeleteItem, onSelectItem }) {
   const { id, value, checked } = itemValue
-  const [checkedItem, setCheckedItem] = useState(checked)
-  const classBoton = checkedItem ? 'bg-red-800' : 'bg-white'
-  const handelchange = ({target}) => {
-    setCheckedItem(target.checked) 
+  // const [checkedItem, setCheckedItem] = useState(checked)
+  const classBoton = checked ? 'bg-slate-600 hover:bg-red-600' : 'bg-white'
+  const handelchange = () => {
+    onSelectItem(id)
+    // setCheckedItem(target.checked) 
   }
 
   const handleDelete = ()=> {
@@ -18,13 +18,13 @@ function ToDoItem({ itemValue, onDeleteItem }) {
       <div>
         <input
           onChange={handelchange}
-          checked={checkedItem}
+          checked={checked}
           className="mr-2"
           type="checkbox" />{value}
       </div>
       <button
       onClick={handleDelete}
-      disabled={!checkedItem}
+      disabled={!checked}
       className= {`px-2 text-white ${classBoton} rounded-2xl`} >X</button>
     </li>
   )
@@ -32,7 +32,8 @@ function ToDoItem({ itemValue, onDeleteItem }) {
 
 ToDoItem.propTypes = {
   itemValue: PropTypes.object,
-  onDeleteItem: PropTypes.func
+  onDeleteItem: PropTypes.func.isRequired,
+  onSelectItem: PropTypes.func.isRequired
 }
 
 export default ToDoItem
