@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-export function useForm (intialControlValue = {}) {
-  const [controles, setControles] = useState(intialControlValue)
+export function useForm (initialControlValue = {}) {
+  const [controles, setControles] = useState(initialControlValue)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -12,7 +12,7 @@ export function useForm (intialControlValue = {}) {
   }
 
   const reset = () => {
-    setControles(intialControlValue)
+    setControles(initialControlValue)
   }
 
   return {

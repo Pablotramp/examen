@@ -11,16 +11,24 @@ export default function ToDoApp() {
   handleSelectItem, 
   handleDeleteAll
 }  =  useToDo([{id:1, value:'hola', checked:true}])
+const toDo = getToDos()
   return (
     <>
       <section className="grid gap-3">
         <h1 className="pb-4 text-4xl font-bold ">Tareas Pendientes</h1>
         {/* recibe el parametro de la funcion hijo */}
         <ToDoForm onAddToDo={handleAddToDo} />
-        {/* Componente ToDoList */}
-        <ToDoList toDo={getToDos()} onSelectItemInList={handleSelectItem} onDeleteItemInList={handleDeleteItem} />
-        {/* Opciones de ToDoOptions */}
-        <ToDoOptions onSelectAll={handleSelectAll} onDeleteAll={handleDeleteAll} />
+        {
+        Boolean(toDo.length) && (
+          <>
+          {/* Componente ToDoList */}
+          <ToDoList toDo={toDo} onSelectItemInList={handleSelectItem} onDeleteItemInList={handleDeleteItem} />
+          {/* Opciones de ToDoOptions */}
+          <ToDoOptions onSelectAll={handleSelectAll} onDeleteAll={handleDeleteAll} />
+          </>
+          
+        )
+        }
        
       </section>
     </>
