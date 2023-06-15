@@ -1,7 +1,7 @@
 import ToDoForm from "./ToDoForm"
 import { ToDoList } from "./ToDoList"
 import { ToDoOptions } from "./ToDoOptions"
-import { useToDo } from "./hooks/useToDo"
+import { useToDo } from "../hooks/useToDo"
 
 export default function ToDoApp() {
  const {  getToDos, 

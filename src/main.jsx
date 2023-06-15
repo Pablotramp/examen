@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-// import { CounterApp } from './CounterApp'
-// import { TasksApp } from './TasksApp'
-import GithubApp  from './GithubApp'
-// import ToDoApp from './ToDoApp'
+// import { CounterApp } from './counter/CounterApp'
+// import { TasksApp } from './task/TasksApp'
+import GithubApp  from './GithubApp/GithubApp'
+// import ToDoApp from './ToDo/ToDoApp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

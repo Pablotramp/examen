@@ -1,7 +1,7 @@
-import { CustomInput } from "./components/CustomInput"
-import { ImageSkeleton } from "./components/imageSkeleton"
-import { END_POINT_URL } from "./constants"
-import { useGithubAvatar } from "./hooks/useGithubAvatar"
+import { CustomInput } from "../components/CustomInput"
+import { ImageSkeleton } from "../components/imageSkeleton"
+import { END_POINT_URL } from "../constants"
+import { useGithubAvatar } from "../hooks/useGithubAvatar"
 
 const GithubApp = () => {
   const { handleChange, handleSubmit, loginRef, user, loading, login, errores, avatar, } = useGithubAvatar() // custom hook 
